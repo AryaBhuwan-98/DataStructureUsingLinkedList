@@ -25,6 +25,11 @@ Node head, tail;
             tail = newNode;
         }
     }
+	public void insertInBetween(Node previousNode ,Node newNode){
+        Node tempNode = previousNode.next;
+        previousNode.next = newNode;
+        newNode.next = tempNode;
+    }
 	
 	public void print() {
         if (head == null) {
