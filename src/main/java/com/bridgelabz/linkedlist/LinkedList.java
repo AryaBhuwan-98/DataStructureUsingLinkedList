@@ -1,8 +1,8 @@
 package com.bridgelabz.linkedlist;
 
 public class LinkedList {
-	private Object tail;
-
+Node head, tail;
+	
 	public Node push(int data) {
 		Node newNode = new Node(data);
 		if (head == null) {
@@ -17,9 +17,7 @@ public class LinkedList {
 	}
 	public void append(int data) { // 56=> 30=> 70
         Node newNode = new Node(data);
-        Object head;
-		Node tail;
-		if (head == null) {
+        if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
@@ -54,13 +52,12 @@ public class LinkedList {
     }
 	
 	public void popLast(){
-        Object head;
-		if (head == null)
+        if (head == null)
             System.out.println("No elements to delete..");
         else if (head.next == null)
             head = null;
         else {
-            Node temp = (Node) head;
+            Node temp = head;
 
             while (temp.next.next != null) {
                 temp = temp.next;
@@ -71,12 +68,11 @@ public class LinkedList {
 }
 	public void search(int searchData)
     {
-        Object head;
-		if(head.key == searchData)
+        if(head.key == searchData)
             System.out.println(searchData + " is found in LinkedList");
         else
         {
-            Object temp=head;
+            Node temp=head;
 
             boolean isFound=false;
 
@@ -146,6 +142,22 @@ public class LinkedList {
             newNode.next = right;
             // Connecting left side elements with new Node
             left.next = newNode;
+        }
 }
+    public void deleteAtIndexPosition(int data) {
+        Node temp = head;               //56,30,40,70
+        if (head.key == data) {
+            pop();
+        } else if (tail.key == data) {
+            popLast();
+        } else {
+            while (temp != null) {
+                if (temp.next.key == data) {
+                    temp.next = temp.next.next;
+                    break;
+                }
+                temp = temp.next;
+            }
 }
-}
+    }
+    }

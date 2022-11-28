@@ -11,6 +11,7 @@ public class Main {
         System.out.println("Enter 5 to delete the data at last position ");
         System.out.println("Enter 6 to search the element in linkedlist ");
         System.out.println("Enter 7 to insert  the data at index position ");
+        System.out.println("Enter 8 to delete 40 from list ");
         switch (scanner.nextInt()) {
 
             case 1:
@@ -34,7 +35,10 @@ public class Main {
             case 7:
             	Operation.insertAtSpecificIndex();
             	break;
+            case 8:
+                Operation.deleteAtIndexPosition();
+                break;
 	}
         scanner.close();
 	}    
-}           
+}        
