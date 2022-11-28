@@ -15,6 +15,16 @@ Node head, tail;
 		}
 		return newNode;
 	}
+	public void append(int data) { // 56=> 30=> 70
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            tail = newNode;
+        }
+    }
 	
 	public void print() {
         if (head == null) {
@@ -27,7 +37,4 @@ Node head, tail;
         }
         }
 	}
-    public static void main(String[] args) {
-    	
-        }
-        }
+}
